@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color:#F4F8FB; -fx-font-family:'Segoe UI', Arial, sans-serif; -fx-font-size:13px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prehackaton.eventos.controller.MainController">
+   <left>
+      <VBox prefWidth="230.0" spacing="6.0" style="-fx-background-color:#075985; -fx-padding:22 14 18 14;" >
+         <Label style="-fx-text-fill:white; -fx-font-size:19px; -fx-font-weight:bold;" text="Eventos &amp; Conferencias" wrapText="true" />
+         <Label style="-fx-text-fill:#BAE6FD; -fx-font-size:11px;" text="Pre-Hackatón T06 · JavaFX + MySQL" wrapText="true" />
+         <Separator />
+         <Button fx:id="btnEventos" maxWidth="Infinity" onAction="#irEventos" style="-fx-background-color:transparent; -fx-text-fill:#E0F2FE; -fx-alignment:CENTER_LEFT; -fx-font-size:14px; -fx-padding:11 14; -fx-background-radius:8; -fx-cursor:hand;" text="▦   Eventos" />
+         <Button fx:id="btnParticipantes" maxWidth="Infinity" onAction="#irParticipantes" style="-fx-background-color:transparent; -fx-text-fill:#E0F2FE; -fx-alignment:CENTER_LEFT; -fx-font-size:14px; -fx-padding:11 14; -fx-background-radius:8; -fx-cursor:hand;" text="☻   Participantes" />
+         <Button fx:id="btnInscripciones" maxWidth="Infinity" onAction="#irInscripciones" style="-fx-background-color:transparent; -fx-text-fill:#E0F2FE; -fx-alignment:CENTER_LEFT; -fx-font-size:14px; -fx-padding:11 14; -fx-background-radius:8; -fx-cursor:hand;" text="✔   Inscripciones" />
+         <Region VBox.vgrow="ALWAYS" />
+         <Label fx:id="lblEstadoBd" style="-fx-text-fill:#86EFAC; -fx-font-size:12px;" text="●" wrapText="true" />
+      </VBox>
+   </left>
+   <center>
+      <StackPane fx:id="contenedor" />
+   </center>
+</BorderPane>
