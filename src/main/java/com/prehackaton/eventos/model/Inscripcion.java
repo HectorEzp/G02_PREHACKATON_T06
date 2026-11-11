@@ -44,4 +44,3 @@ public class Inscripcion {
         return fechaInscripcion == null ? "" : fechaInscripcion.format(FMT);
     }
 }
-

@@ -14,10 +14,10 @@ public class InscripcionDAOImpl implements InscripcionDAO {
 
     private static final String SELECT =
             "SELECT i.id_inscripcion, i.id_evento, i.id_participante, i.fecha_inscripcion, i.estado, "
-                    + "e.nombre AS evento, CONCAT(p.apellidos, ', ', p.nombres) AS participante, p.dni "
-                    + "FROM inscripciones i "
-                    + "INNER JOIN eventos e ON e.id_evento = i.id_evento "
-                    + "INNER JOIN participantes p ON p.id_participante = i.id_participante";
+          + "e.nombre AS evento, CONCAT(p.apellidos, ', ', p.nombres) AS participante, p.dni "
+          + "FROM inscripciones i "
+          + "INNER JOIN eventos e ON e.id_evento = i.id_evento "
+          + "INNER JOIN participantes p ON p.id_participante = i.id_participante";
 
     private Inscripcion mapear(ResultSet rs) throws SQLException {
         Inscripcion i = new Inscripcion();
@@ -115,4 +115,3 @@ public class InscripcionDAOImpl implements InscripcionDAO {
         }
     }
 }
-
