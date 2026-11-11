@@ -1,38 +1,24 @@
 package com.prehackaton.eventos.model.dao;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 /**
- * Proveedor de conexiones JDBC. Lee la configuración de db.properties.
+ * Proveedor de conexiones JDBC hacia MySQL (Docker local).
  */
 public final class Conexion {
 
-    private static final Properties PROPS = new Properties();
-
-    static {
-        try (InputStream in = Conexion.class.getResourceAsStream("/db.properties")) {
-            if (in == null) {
-                throw new IllegalStateException("No se encontró db.properties en resources.");
-            }
-            PROPS.load(in);
-        } catch (IOException e) {
-            throw new ExceptionInInitializerError(e);
-        }
-    }
+    private static final String URL = "jdbc:mysql://localhost:3306/db_eventos"
+            + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Lima&characterEncoding=UTF-8";
+    private static final String USUARIO = "root";
+    private static final String PASSWORD = "12345678";
 
     private Conexion() {
     }
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(
-                PROPS.getProperty("db.url"),
-                PROPS.getProperty("db.user"),
-                PROPS.getProperty("db.password"));
+        return DriverManager.getConnection(URL, USUARIO, PASSWORD);
     }
 
     /** @return null si la conexión es correcta; de lo contrario, el mensaje de error. */

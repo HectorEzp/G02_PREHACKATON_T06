@@ -3,6 +3,7 @@ package com.prehackaton.eventos.controller;
 import com.prehackaton.eventos.model.dao.EventoDAO;
 import com.prehackaton.eventos.model.dao.EventoDAOImpl;
 import com.prehackaton.eventos.model.dao.InscripcionDAO;
+import com.prehackaton.eventos.model.dao.InscripcionDAOImpl;
 import com.prehackaton.eventos.model.dao.ParticipanteDAO;
 import com.prehackaton.eventos.model.dao.ParticipanteDAOImpl;
 import com.prehackaton.eventos.model.Evento;
